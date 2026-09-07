@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tech Infronex - IT Services, Technology Consulting and Dedicated Developers"
+    />
+    <title>Tech Infronex | Talent. Technology. Trust.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --green: #23882f;
+        --green2: #4fc34d;
+        --dark: #07130d;
+        --text: #101516;
+        --muted: #687173;
+        --line: #e9eeea;
+        --soft: #f5faf5;
+        --white: #fff;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Inter, Arial, sans-serif;
+        color: var(--text);
+        background: #fff;
+        line-height: 1.5;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .container {
+        width: min(1180px, 92%);
+        margin: auto;
+      }
+      .header {
+        height: 76px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        width: 230px;
+        height: auto;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 29px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .nav-links a {
+        position: relative;
+        padding: 28px 0;
+      }
+      .nav-links a:not(.nav-button):after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 18px;
+        height: 2px;
+        background: var(--green);
+        transform: scaleX(0);
+        transition: 0.25s;
+      }
+      .nav-links a:hover:after,
+      .nav-links a.active:after {
+        transform: scaleX(1);
+      }
+      .nav-button {
+        background: var(--green);
+        color: #fff !important;
+        padding: 11px 20px !important;
+        border-radius: 30px;
+        box-shadow: 0 7px 18px #23882f2b;
+      }
+      .menu {
+        display: none;
+        border: 0;
+        background: none;
+        font-size: 27px;
+        cursor: pointer;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        min-height: 530px;
+        background: linear-gradient(115deg, #fff 0%, #fff 57%, #edf5ef 100%);
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        right: -190px;
+        top: -180px;
+        background: #2e9b3d12;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 530px;
+        align-items: center;
+        gap: 50px;
+      }
+      .eyebrow {
+        color: #388447;
+        letter-spacing: 3px;
+        font-weight: 800;
+        font-size: 11px;
+        margin-bottom: 12px;
+      }
+      .hero h1 {
+        font-family: Poppins, sans-serif;
+        font-size: 54px;
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+        margin-bottom: 18px;
+      }
+      .green {
+        color: var(--green);
+      }
+      .hero-copy > p {
+        max-width: 570px;
+        color: #586164;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+      .actions {
+        display: flex;
+        gap: 13px;
+        margin: 28px 0 28px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 8px;
+        padding: 14px 20px;
+        font-size: 13px;
+        font-weight: 800;
+        transition: 0.25s;
+      }
+      .btn-primary {
+        background: var(--green);
+        color: #fff;
+        box-shadow: 0 10px 24px #23882f29;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        background: #1d7427;
+      }
+      .btn-outline {
+        border: 1px solid var(--green);
+        color: #23772d;
+        background: #fff;
+      }
+      .btn-outline:hover {
+        background: #f2faf3;
+      }
+      .trust {
+        display: flex;
+        gap: 32px;
+      }
+      .trust-item {
+        display: grid;
+        grid-template-columns: 27px auto;
+        column-gap: 7px;
+      }
+      .trust-icon {
+        grid-row: 1/3;
+        color: var(--green);
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .trust-item strong {
+        font-size: 12px;
+      }
+      .trust-item span {
+        font-size: 10px;
+        color: #778083;
+      }
+
+      .hero-art {
+        height: 410px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0 0 0 150px;
+        background: linear-gradient(135deg, #d9eadc, #71997a);
+      }
+      .hero-art:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          115deg,
+          transparent 28%,
+          #153b1f20 29%,
+          transparent 30%
+        );
+      }
+      .screen {
+        position: absolute;
+        left: 10%;
+        top: 18%;
+        width: 72%;
+        height: 58%;
+        border-radius: 11px;
+        background: #101817;
+        box-shadow: 0 25px 40px #15361b5c;
+        transform: rotate(-2deg);
+        padding: 22px;
+      }
+      .dots {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 18px;
+      }
+      .dots i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #76bd7a;
+      }
+      .code {
+        height: 7px;
+        background: #51ae5a;
+        border-radius: 8px;
+        margin: 12px 0;
+        opacity: 0.72;
+      }
+      .c1 {
+        width: 83%;
+      }
+      .c2 {
+        width: 54%;
+      }
+      .c3 {
+        width: 91%;
+      }
+      .c4 {
+        width: 68%;
+      }
+      .c5 {
+        width: 47%;
+      }
+      .c6 {
+        width: 77%;
+      }
+      .c7 {
+        width: 61%;
+      }
+      .idea {
+        position: absolute;
+        right: 7%;
+        top: 7%;
+        font-family: cursive;
+        font-size: 27px;
+        line-height: 1.02;
+        color: #15351d;
+        transform: rotate(-8deg);
+      }
+      .float {
+        position: absolute;
+        right: 5%;
+        bottom: 8%;
+        background: #fff;
+        border-radius: 12px;
+        padding: 13px 16px;
+        box-shadow: 0 15px 30px #122d1740;
+        display: grid;
+        grid-template-columns: 28px 1fr;
+      }
+      .float b {
+        grid-row: 1/3;
+        color: var(--green);
+        font-size: 19px;
+      }
+      .float strong {
+        font-size: 11px;
+      }
+      .float small {
+        font-size: 9px;
+        color: #687173;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+      .heading {
+        text-align: center;
+        margin-bottom: 42px;
+      }
+      .heading h2 {
+        font-family: Poppins, sans-serif;
+        font-size: 37px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+      .heading p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .services {
+        background: linear-gradient(#fff, #f7fbf7);
+      }
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+      }
+      .service {
+        padding: 25px 18px;
+        background: #fff;
+        border: 1px solid #edf1ee;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 12px 28px #16351a0a;
+        transition: 0.3s;
+      }
+      .service:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 35px #16351a17;
+      }
+      .service-icon {
+        width: 45px;
+        height: 45px;
+        border: 2px solid #299235;
+        border-radius: 11px;
+        color: #299235;
+        margin: 0 auto 17px;
+        display: grid;
+        place-items: center;
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .service h3 {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      .service p {
+        font-size: 11px;
+        color: #70797b;
+        line-height: 1.55;
+      }
+
+      .about {
+        background: #fff;
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 65px;
+        align-items: center;
+      }
+      .office {
+        height: 420px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #edf6ef, #cbdcca);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 25px 55px #193d1e16;
+      }
+      .office:before {
+        content: "";
+        position: absolute;
+        left: 8%;
+        right: 8%;
+        top: 14%;
+        height: 48%;
+        border-radius: 14px;
+        background: #ffffff90;
+        border: 1px solid #fff;
+      }
+      .office-logo {
+        position: absolute;
+        left: 16%;
+        right: 16%;
+        top: 25%;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 15px 35px #17351b22;
+      }
+      .office-logo img {
+        width: 100%;
+        height: auto;
+        mix-blend-mode: multiply;
+      }
+      .plant {
+        position: absolute;
+        left: 7%;
+        bottom: -25px;
+        font-size: 120px;
+        color: #43804a;
+        transform: rotate(12deg);
+      }
+      .about-tag {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: #39ae45;
+        color: #fff;
+        padding: 19px 25px;
+        border-radius: 14px 0 0 0;
+        font-weight: 800;
+        text-align: center;
+        font-size: 13px;
+      }
+      .about h2 {
+        font-family: Poppins, sans-serif;
+        font-size: 36px;
+        line-height: 1.16;
+        margin-bottom: 17px;
+      }
+      .about-copy p {
+        font-size: 13px;
+        color: #687173;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+      .stats {
+        display: flex;
+        gap: 58px;
+        margin: 25px 0;
+      }
+      .stats div {
+        display: grid;
+      }
+      .stats b {
+        font-size: 27px;
+        color: #24882e;
+      }
+      .stats span {
+        font-size: 10px;
+        color: #737b7d;
+      }
+
+      .hire {
+        padding: 75px 0;
+        background: radial-gradient(circle at 72% 0%, #155725, #03150b 58%);
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .hire:after {
+        content: "";
+        position: absolute;
+        width: 520px;
+        height: 520px;
+        right: -160px;
+        top: -180px;
+        border-radius: 50%;
+        border: 1px solid #74d47d14;
+        box-shadow:
+          0 0 0 70px #74d47d08,
+          0 0 0 140px #74d47d05;
+      }
+      .hire-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 65px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .hire h2 {
+        font-family: Poppins, sans-serif;
+        font-size: 37px;
+        line-height: 1.16;
+        margin-bottom: 15px;
+      }
+      .hire p {
+        font-size: 13px;
+        line-height: 1.7;
+        color: #c7d4ca;
+        max-width: 530px;
+        margin-bottom: 25px;
+      }
+      .light {
+        color: #94d995;
+      }
+      .btn-light {
+        background: #64c94f;
+        color: #07200c;
+      }
+      .benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .benefit {
+        height: 112px;
+        border: 1px solid #ffffff20;
+        border-radius: 11px;
+        background: #ffffff08;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        text-align: center;
+      }
+      .benefit b {
+        color: #70d16c;
+        font-size: 25px;
+      }
+      .benefit span {
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .contact {
+        background: linear-gradient(#fff, #f7fbf7);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 50px;
+        max-width: 1050px;
+        margin: auto;
+      }
+      .contact-info {
+        display: grid;
+        gap: 13px;
+        align-content: start;
+      }
+      .contact-item {
+        display: flex;
+        gap: 13px;
+        background: #fff;
+        border: 1px solid #edf1ee;
+        border-radius: 11px;
+        padding: 17px;
+        box-shadow: 0 8px 25px #15351a09;
+      }
+      .contact-item > i {
+        font-style: normal;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: #eff8f0;
+        color: #23882f;
+        display: grid;
+        place-items: center;
+        font-size: 18px;
+      }
+      .contact-item strong {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 3px;
+      }
+      .contact-item a,
+      .contact-item span {
+        font-size: 11px;
+        color: #687173;
+      }
+      .form {
+        background: #fff;
+        padding: 23px;
+        border-radius: 12px;
+        box-shadow: 0 15px 38px #15351a12;
+      }
+      .form input,
+      .form textarea {
+        width: 100%;
+        border: 1px solid #e2e8e4;
+        border-radius: 7px;
+        padding: 13px;
+        margin-bottom: 11px;
+        font: inherit;
+        font-size: 12px;
+        outline: none;
+      }
+      .form input:focus,
+      .form textarea:focus {
+        border-color: #52a55a;
+      }
+      .form .btn {
+        width: 100%;
+        border: 0;
+      }
+      .message {
+        text-align: center;
+        color: #25852f;
+        font-size: 11px;
+        min-height: 18px;
+        margin-top: 8px;
+      }
+
+      .footer {
+        background: #06120d;
+        color: #fff;
+      }
+      .footer-main {
+        min-height: 108px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+      }
+      .footer-logo {
+        width: 220px;
+        height: 62px;
+        object-fit: contain;
+      }
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        font-size: 11px;
+        color: #d4ddd6;
+      }
+      .social {
+        display: flex;
+        gap: 8px;
+      }
+      .social i {
+        font-style: normal;
+        width: 27px;
+        height: 27px;
+        border: 1px solid #ffffff2c;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 10px;
+      }
+      .footer-bottom {
+        border-top: 1px solid #ffffff14;
+        padding: 16px 0;
+        display: flex;
+        justify-content: space-between;
+        color: #7d8881;
+        font-size: 9px;
+      }
+      .footer-brand {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .footer-company-name {
+        font-family: "Poppins", sans-serif;
+        font-size: 27px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        line-height: 1;
+        color: #ffffff;
+      }
+
+      .footer-company-name strong {
+        color: #55c653;
+        font-weight: 800;
+      }
+
+      .footer-tagline {
+        font-size: 8px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: #c8d0cb;
+        text-align: center;
+      }
+
+      .footer-tagline i {
+        color: #55c653;
+        font-style: normal;
+        margin: 0 5px;
+      }
+
+      @media (max-width: 1000px) {
+        .nav-links {
+          gap: 16px;
+        }
+        .service-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .hero h1 {
+          font-size: 45px;
+        }
+        .about-grid,
+        .hire-grid {
+          gap: 40px;
+        }
+      }
+      @media (max-width: 760px) {
+        .header {
+          height: 68px;
+        }
+        .logo {
+          width: 195px;
+          height: 56px;
+        }
+        .menu {
+          display: block;
+        }
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 68px;
+          left: 0;
+          right: 0;
+          background: #fff;
+          box-shadow: 0 18px 30px #0001;
+          padding: 15px 6%;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+        }
+        .nav-links.open {
+          display: flex;
+        }
+        .nav-links a {
+          padding: 13px 0;
+        }
+        .nav-links a:not(.nav-button):after {
+          bottom: 5px;
+        }
+        .nav-button {
+          text-align: center;
+          margin-top: 7px;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+          padding: 55px 0;
+        }
+        .hero {
+          min-height: auto;
+        }
+        .hero h1 {
+          font-size: 39px;
+        }
+        .hero-art {
+          height: 290px;
+          border-radius: 0 0 0 95px;
+        }
+        .trust {
+          justify-content: space-between;
+          gap: 10px;
+        }
+        .actions {
+          flex-direction: column;
+        }
+        .section {
+          padding: 62px 0;
+        }
+        .heading h2,
+        .about h2,
+        .hire h2 {
+          font-size: 31px;
+        }
+        .service-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .about-grid,
+        .hire-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .office {
+          height: 310px;
+        }
+        .stats {
+          justify-content: space-between;
+          gap: 15px;
+        }
+        .stats b {
+          font-size: 23px;
+        }
+        .benefits {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-main {
+          padding: 25px 0;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .footer-links {
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 7px;
+          text-align: center;
+        }
+        .footer-brand {
+          min-width: 220px;
+        }
+      }
+      @media (max-width: 470px) {
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+        .trust-item strong {
+          font-size: 11px;
+        }
+        .hero h1 {
+          font-size: 35px;
+        }
+        .benefits {
+          grid-template-columns: 1fr;
+        }
+        .hero-art {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="#home"
+          ><img
+            class="logo"
+            src="assets/tech-infronex-logo.jpg"
+            alt="Tech Infronex"
+        /></a>
+        <button class="menu" id="menu" aria-label="Open navigation">☰</button>
+        <nav class="nav-links" id="nav">
+          <a class="active" href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#about">About Us</a>
+          <a href="#developers">Hire Dedicated Dev</a>
+          <a href="#contact">Contact Us</a>
+          <a class="nav-button" href="#contact">Get In Touch</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">YOUR TECHNOLOGY PARTNER</div>
+          <h1>
+            Build. Scale. Succeed<br />with
+            <span class="green">Tech Infronex</span>
+          </h1>
+          <p>
+            We deliver innovative IT solutions, expert consultancy and dedicated
+            development teams to help your business grow in the digital world.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact"
+              >Get Free Consultation <b>→</b></a
+            >
+            <a class="btn btn-outline" href="#services">Explore Services</a>
+          </div>
+          <div class="trust">
+            <div class="trust-item">
+              <b class="trust-icon">♣</b><strong>Skilled Talent</strong
+              ><span>On-Demand</span>
+            </div>
+            <div class="trust-item">
+              <b class="trust-icon">⚙</b><strong>Innovative</strong
+              ><span>Solutions</span>
+            </div>
+            <div class="trust-item">
+              <b class="trust-icon">◇</b><strong>Trusted</strong
+              ><span>Partnership</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Technology illustration">
+          <div class="idea">Ideas<br />into<br />Impact</div>
+          <div class="screen">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <div class="code c1"></div>
+            <div class="code c2"></div>
+            <div class="code c3"></div>
+            <div class="code c4"></div>
+            <div class="code c5"></div>
+            <div class="code c6"></div>
+            <div class="code c7"></div>
+          </div>
+          <div class="float">
+            <strong>Reliable IT Partner</strong
+            ><small>for a Smarter Tomorrow</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="heading">
+          <div class="eyebrow">WHAT WE DO</div>
+          <h2>Our Services</h2>
+          <p>End-to-end technology services tailored to your business needs.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-icon">⌘</div>
+            <h3>Web Development</h3>
+            <p>Custom, scalable and high-performance web solutions.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">▯</div>
+            <h3>Mobile App Development</h3>
+            <p>Android, iOS & cross-platform apps for modern businesses.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">☁</div>
+            <h3>Cloud Solutions</h3>
+            <p>Secure, scalable and cost-effective cloud infrastructure.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">⚙</div>
+            <h3>IT Consultancy</h3>
+            <p>Strategic guidance to accelerate your digital transformation.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">▥</div>
+            <h3>Digital Transformation</h3>
+            <p>Leverage technology to modernize and grow your business.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="office">
+          <div class="office-logo">
+            <img src="assets/tech-infronex-logo.jpg" alt="Tech Infronex logo" />
+          </div>
+          <div class="plant">◢</div>
+          <div class="about-tag">People<br />Technology<br />Growth</div>
+        </div>
+        <div class="about-copy">
+          <div class="eyebrow">ABOUT US</div>
+          <h2>Driving Innovation<br />Through People & Technology</h2>
+          <p>
+            Tech Infronex is an IT services and consulting company committed to
+            delivering high-quality solutions with a focus on talent, technology
+            and trust.
+          </p>
+          <p>
+            We partner with startups, SMEs and enterprises to build digital
+            products, optimize processes and create long-term value.
+          </p>
+          <div class="stats">
+            <div><b>6+</b><span>Years Experience</span></div>
+            <div><b>100+</b><span>Projects Delivered</span></div>
+            <div><b>50+</b><span>Happy Clients</span></div>
+          </div>
+          <a class="btn btn-outline" href="#contact">Learn More About Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="hire" id="developers">
+      <div class="container hire-grid">
+        <div>
+          <div class="eyebrow light">HIRE DEDICATED DEVELOPERS</div>
+          <h2>Extend Your Team<br />with Top Talent</h2>
+          <p>
+            Hire skilled, pre-vetted developers to work exclusively on your
+            projects. Flexible hiring models, full control and seamless
+            collaboration.
+          </p>
+          <a class="btn btn-light" href="#contact"
+            >Hire Dedicated Developers <b>→</b></a
+          >
+        </div>
+        <div class="benefits">
+          <div class="benefit">
+            <b>♙</b><span>Flexible<br />Engagement</span>
+          </div>
+          <div class="benefit">
+            <b>⚙</b><span>Skilled &<br />Vetted Talent</span>
+          </div>
+          <div class="benefit">
+            <b>▤</b><span>Cost<br />Effective</span>
+          </div>
+          <div class="benefit">
+            <b>◷</b><span>Time Zone<br />Alignment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="heading">
+          <div class="eyebrow">GET IN TOUCH</div>
+          <h2>Let's Build Something Great Together</h2>
+          <p>
+            Have a project in mind or need expert advice? We're here to help.
+          </p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i>✉</i>
+              <div>
+                <strong>Email Us</strong
+                ><a href="mailto:info@techinfronex.com"
+                  >info@techinfronex.com</a
+                >
+              </div>
+            </div>
+            <div class="contact-item">
+              <i>☎</i>
+              <div>
+                <strong>Call Us</strong
+                ><a href="tel:+918387867907">+91 83878 67907</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i>⌖</i>
+              <div>
+                <strong>Our Location</strong
+                ><span>Ahmedabad, Gujarat, India</span>
+              </div>
+            </div>
+          </div>
+          <form class="form" id="contactForm">
+            <input name="name" required placeholder="Your Name *" />
+            <input
+              name="email"
+              required
+              type="email"
+              placeholder="Your Email *"
+            />
+            <textarea
+              name="message"
+              required
+              rows="5"
+              placeholder="Your Message *"
+            ></textarea>
+            <button class="btn btn-primary" type="submit">
+              Send Message <b>→</b>
+            </button>
+            <div class="message" id="message"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-main">
+        <div class="footer-brand">
+          <div class="footer-company-name">
+            <span>TECH</span> <strong>INFRONEX</strong>
+          </div>
+
+          <div class="footer-tagline">
+            TALENT. <i>|</i> TECHNOLOGY. <i>|</i> TRUST.
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a><a href="#services">Services</a
+          ><a href="#about">About Us</a
+          ><a href="#developers">Hire Dedicated Dev</a
+          ><a href="#contact">Contact Us</a>
+        </div>
+        <div class="social"><i>in</i><i>◎</i><i>▶</i><i>𝕏</i></div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© 2026 Tech Infronex. All rights reserved.</span
+        ><span>Building Better Futures with Technology.</span>
+      </div>
+    </footer>
+
+    <script>
+      const menu = document.getElementById("menu"),
+        nav = document.getElementById("nav");
+      menu.addEventListener("click", () => nav.classList.toggle("open"));
+      document
+        .querySelectorAll(".nav-links a")
+        .forEach((a) =>
+          a.addEventListener("click", () => nav.classList.remove("open")),
+        );
+      const form = document.getElementById("contactForm"),
+        message = document.getElementById("message");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        message.textContent = "Thank you! We will get back to you shortly.";
+        form.reset();
+      });
+      const sections = [...document.querySelectorAll("section[id]")],
+        links = [...document.querySelectorAll(".nav-links a:not(.nav-button)")];
+      window.addEventListener("scroll", () => {
+        let current = "home";
+        sections.forEach((s) => {
+          if (scrollY >= s.offsetTop - 120) current = s.id;
+        });
+        links.forEach((l) =>
+          l.classList.toggle(
+            "active",
+            l.getAttribute("href") === "#" + current,
+          ),
+        );
+      });
+    </script>
+  </body>
+</html>
